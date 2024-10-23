@@ -1,13 +1,15 @@
-import { drizzle } from "npm:drizzle-orm/node-postgres";
-import { Pool } from "npm:pg";
-import { posts } from "./schema.ts";
+// import { drizzle } from "npm:drizzle-orm/node-postgres";
 
-const pool = new Pool({
-  connectionString: Deno.env.get("DATABASE_URI") as string,
-});
+import { drizzle } from "npm:drizzle-orm/postgres-js";
+import { posts } from "./schema.ts";
+import postgres from "postgres";
+
+const url = Deno.env.get("DATABASE_URI");
+console.log("url: ", url);
+const queryClient = postgres(url as string);
 
 const db = drizzle({
-  client: pool,
+  client: queryClient,
   schema: {
     posts,
   },

@@ -1,14 +1,14 @@
 {
   "imports": {
     "@std/dotenv": "jsr:@std/dotenv@^0.225.2",
-    "@types/pg": "npm:@types/pg@^8.11.10",
     "drizzle-kit": "npm:drizzle-kit@^0.26.2",
     "drizzle-orm": "npm:drizzle-orm@^0.35.3",
     "hono": "jsr:@hono/hono@^4.6.6",
-    "pg": "npm:pg@^8.13.0"
+    "pg": "npm:pg@^8.13.0",
+    "postgres": "npm:postgres@^3.4.4"
   },
   "tasks": {
-    "start": "deno run --allow-net --watch src/main.ts",
+    "start": "deno run -A --watch src/main.ts",
     "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
     "db:migrate": "drizzle-kit migrate --config=drizzle.config.ts"
   },

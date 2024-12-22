@@ -1,18 +1,18 @@
-// import { drizzle } from "npm:drizzle-orm/node-postgres";
-
-import { drizzle } from "npm:drizzle-orm/postgres-js";
+import { drizzle } from "drizzle-orm/node-postgres";
+import pg from "pg";
 import { posts } from "./schema.ts";
-import postgres from "postgres";
 
-const url = Deno.env.get("DATABASE_URI");
+const url = Deno.env.get("DATABASE_URL")!;
 console.log("url: ", url);
-const queryClient = postgres(url as string);
 
-const db = drizzle({
-  client: queryClient,
+// Use pg driver.
+const { Pool } = pg;
+
+export const db = drizzle({
+  client: new Pool({
+    connectionString: url,
+  }),
   schema: {
     posts,
   },
 });
-
-export { db };

@@ -27,16 +27,16 @@ bash docker.sh
 
 10. Connect postgres database using hono
 11. Schema creation using drizzle and postgres
-12. Generate database using `drizzle-kit generate` and check generated file
+12. Generate database using `drizzle-kit generate` and check the generated file
 
 ```bash
-"db:generate": "drizzle-kit generate"
+deno run --node-modules-dir -A npm:drizzle-kit generate --config=drizzle.config.ts
 ```
 
 13. Migrate database using `drizzle-kit migrate`
 
 ```bash
-  "db:migrate": "drizzle-kit migrate"
+  deno --env -A --node-modules-dir npm:drizzle-kit migrate --config=drizzle.config.ts
 ```
 
 14. Introducing about CRUD operation in hono web framewwork

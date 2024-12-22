@@ -27,7 +27,7 @@ export default {
 bash docker.sh
 ```
 
-11. Generate database using `drizzle-kit generate` and check the generated file
+10. Generate database using `drizzle-kit generate` and check the generated file
 
 ```bash
 deno run --node-modules-dir -A npm:drizzle-kit generate --config=drizzle.config.ts
@@ -39,12 +39,12 @@ deno run --node-modules-dir -A npm:drizzle-kit generate --config=drizzle.config.
   deno --env -A --node-modules-dir npm:drizzle-kit migrate --config=drizzle.config.ts
 ```
 
-14. Pool drizzle database connection
-15. Introducing about CRUD operation in hono web framewwork
-16. Create a new post
-17. Read all post from postgresql database
-18. Update a single post using `params id`
-19. Delete a single post using `params id`
-20. Query single post by `quary params`
-21. Test our entire app
-22. Deploy Hono REST API
+12. Pool drizzle database connection
+13. Introducing about CRUD operation in hono web framewwork
+14. Create a new post
+15. Read all post from postgresql database
+16. Update a single post using `params id`
+17. Delete a single post using `params id`
+18. Query single post by `quary params`
+19. Test our entire app
+20. Deploy Hono REST API

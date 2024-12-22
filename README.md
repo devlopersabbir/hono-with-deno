@@ -4,7 +4,9 @@
 4. Hello world - first app creation
 5. Hono middlewares
 6. Hono request `query` and `params`
+
 <!-- database connection -->
+
 7. Introducing drizzle orm
 8. Creating a `drizzle.config.ts`
 
@@ -19,31 +21,30 @@ export default {
 };
 ```
 
-9. Create a postgress database into the docker container
+9. Create a postgress database into the docker container & Schema creation using drizzle and postgres
 
 ```bash
 bash docker.sh
 ```
 
-10. Connect postgres database using hono
-11. Schema creation using drizzle and postgres
-12. Generate database using `drizzle-kit generate` and check the generated file
+11. Generate database using `drizzle-kit generate` and check the generated file
 
 ```bash
 deno run --node-modules-dir -A npm:drizzle-kit generate --config=drizzle.config.ts
 ```
 
-13. Migrate database using `drizzle-kit migrate`
+11. Migrate database using `drizzle-kit migrate`
 
 ```bash
   deno --env -A --node-modules-dir npm:drizzle-kit migrate --config=drizzle.config.ts
 ```
 
-14. Introducing about CRUD operation in hono web framewwork
-15. Create a new post
-16. Read all post from postgresql database
-17. Update a single post using `params id`
-18. Delete a single post using `params id`
-19. Query single post by `quary params`
-20. Test our entire app
-21. Deploy Hono REST API
+14. Pool drizzle database connection
+15. Introducing about CRUD operation in hono web framewwork
+16. Create a new post
+17. Read all post from postgresql database
+18. Update a single post using `params id`
+19. Delete a single post using `params id`
+20. Query single post by `quary params`
+21. Test our entire app
+22. Deploy Hono REST API
